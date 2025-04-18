@@ -418,6 +418,9 @@ nav {
     border: 1px solid rgba(52, 152, 219, 0.1);
     position: relative;
     transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .assignment-number {
@@ -459,11 +462,20 @@ nav {
 .assignment-card h3 {
     color: #2c3e50;
     margin-bottom: 1rem;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .assignment-card p {
     color: #666;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.assignment-card .btn {
+    margin-top: auto;
 }
 
 .btn {
