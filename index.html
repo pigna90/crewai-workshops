@@ -6,6 +6,7 @@
     <title>CrewAI Workshop - PyCon DE 2025</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
 </head>
 <body>
     <header>
@@ -33,47 +34,85 @@
     <section id="prerequisites" class="prerequisites">
         <h2>Setup Prerequisites</h2>
         <div class="prerequisites-content">
-            <div class="prerequisites-card">
-                <div class="prerequisites-icon">
-                    <i class="fas fa-key"></i>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="api-keys">API Keys</button>
+                    <button class="tab-btn" data-tab="setup">Setup Guide</button>
                 </div>
-                <h3>API Keys Setup</h3>
-                <ol class="setup-steps">
-                    <li>
-                        <strong>OpenAI API Key</strong>
-                        <p>Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a></p>
-                    </li>
-                    <li>
-                        <strong>SerperDev API Key</strong>
-                        <p>Get your API key from <a href="https://serper.dev/" target="_blank">SerperDev</a></p>
-                    </li>
-                </ol>
-            </div>
-            <div class="prerequisites-card">
-                <div class="prerequisites-icon">
-                    <i class="fas fa-terminal"></i>
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="api-keys">
+                        <div class="api-keys-grid">
+                            <div class="api-key-card">
+                                <div class="api-key-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3>OpenAI API Key</h3>
+                                <p>Required for accessing GPT models</p>
+                                <a href="https://platform.openai.com/api-keys" target="_blank" class="api-key-link">
+                                    Get API Key
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="api-key-card">
+                                <div class="api-key-icon">
+                                    <i class="fas fa-magnifying-glass-chart"></i>
+                                </div>
+                                <h3>SerperDev API Key</h3>
+                                <p>Required for web search capabilities</p>
+                                <a href="https://serper.dev/" target="_blank" class="api-key-link">
+                                    Get API Key
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="setup">
+                        <div class="setup-steps">
+                            <div class="setup-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Create Virtual Environment</h3>
+                                    <div class="code-block">
+                                        <code>python -m venv crewai-env</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setup-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Activate Environment</h3>
+                                    <div class="code-block">
+                                        <code>source crewai-env/bin/activate  # macOS/Linux</code>
+                                        <code>crewai-env\Scripts\activate    # Windows</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setup-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Install crewAI</h3>
+                                    <div class="code-block">
+                                        <code>pip install crewai</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setup-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Set API Keys</h3>
+                                    <div class="code-block">
+                                        <code># macOS/Linux</code>
+                                        <code>export OPENAI_API_KEY='your-key'</code>
+                                        <code>export SERPER_API_KEY='your-key'</code>
+                                        <code># Windows</code>
+                                        <code>set OPENAI_API_KEY=your-key</code>
+                                        <code>set SERPER_API_KEY=your-key</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3>Installation & Setup</h3>
-                <ol class="setup-steps">
-                    <li>
-                        <strong>Install crewAI</strong>
-                        <div class="code-block">
-                            <code>pip install crewai</code>
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Environment Variables</strong>
-                        <div class="code-block">
-                            <code>export OPENAI_API_KEY='your-openai-key'</code>
-                            <code>export SERPER_API_KEY='your-serper-key'</code>
-                        </div>
-                        <p>For Windows, use:</p>
-                        <div class="code-block">
-                            <code>set OPENAI_API_KEY=your-openai-key</code>
-                            <code>set SERPER_API_KEY=your-serper-key</code>
-                        </div>
-                    </li>
-                </ol>
             </div>
         </div>
     </section>
@@ -82,6 +121,7 @@
         <h2>Assignments</h2>
         <div class="assignment-grid">
             <div class="assignment-card">
+                <div class="assignment-number">1</div>
                 <div class="assignment-icon">
                     <i class="fas fa-robot"></i>
                 </div>
@@ -91,6 +131,7 @@
             </div>
 
             <div class="assignment-card">
+                <div class="assignment-number">2</div>
                 <div class="assignment-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
@@ -100,6 +141,7 @@
             </div>
 
             <div class="assignment-card">
+                <div class="assignment-number">3</div>
                 <div class="assignment-icon">
                     <i class="fas fa-credit-card"></i>
                 </div>
@@ -109,6 +151,7 @@
             </div>
 
             <div class="assignment-card">
+                <div class="assignment-number">4</div>
                 <div class="assignment-icon">
                     <i class="fas fa-user-plus"></i>
                 </div>

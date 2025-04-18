@@ -146,9 +146,9 @@ nav {
     background: none !important;
 }
 
-/* Prerequisites Section */
+/* Prerequisites Section - New Design */
 .prerequisites {
-    padding: 3rem 5%;
+    padding: 4rem 2rem;
     background-color: #fff;
 }
 
@@ -156,170 +156,219 @@ nav {
     text-align: center;
     margin-bottom: 2rem;
     color: #2c3e50;
-    font-size: 2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.prerequisites h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right, #3498db, #2c3e50);
-    border-radius: 2px;
+    font-size: 2.5rem;
 }
 
 .prerequisites-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.prerequisites-card {
+/* Tabs Container */
+.tabs-container {
     background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    overflow: hidden;
     border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
-.prerequisites-card:hover {
-    transform: translateY(-3px);
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+    background: #fff;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-btn.active {
+    color: #3498db;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3498db;
+}
+
+.tab-btn:hover {
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.tabs-content {
+    padding: 2rem;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* API Keys Grid */
+.api-keys-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.api-key-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.api-key-card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     border-color: rgba(52, 152, 219, 0.3);
 }
 
-.prerequisites-icon {
-    font-size: 2rem;
+.api-key-icon {
+    font-size: 2.5rem;
     color: #3498db;
-    text-align: center;
-    background: rgba(52, 152, 219, 0.1);
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    transition: all 0.3s ease;
-}
-
-.prerequisites-card:hover .prerequisites-icon {
-    background: #3498db;
-    color: white;
-    transform: scale(1.05);
-}
-
-.prerequisites-card h3 {
-    color: #2c3e50;
     margin-bottom: 1rem;
-    text-align: center;
-    font-size: 1.2rem;
-    position: relative;
-    padding-bottom: 0.3rem;
 }
 
-.prerequisites-card h3:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 2px;
-    background: #3498db;
-    border-radius: 2px;
-}
-
-.setup-steps {
-    list-style: none;
-    padding-left: 0;
-}
-
-.setup-steps li {
-    margin-bottom: 1rem;
-    position: relative;
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    border-left: 3px solid #3498db;
-}
-
-.setup-steps li:hover {
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transform: translateX(3px);
-    border-left-width: 4px;
-}
-
-.setup-steps li strong {
-    display: block;
+.api-key-card h3 {
     color: #2c3e50;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
 }
 
-.setup-steps li p {
-    margin: 0.5rem 0;
+.api-key-card p {
     color: #666;
-    line-height: 1.4;
-    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
-.setup-steps li a {
+.api-key-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: #3498db;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(52, 152, 219, 0.1);
     transition: all 0.3s ease;
-    display: inline-block;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
 }
 
-.setup-steps li a:hover {
-    background: rgba(52, 152, 219, 0.1);
-    text-decoration: none;
+.api-key-link:hover {
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateX(5px);
+}
+
+/* Setup Steps */
+.setup-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.setup-step {
+    display: flex;
+    gap: 1.5rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.setup-step:hover {
+    transform: translateX(5px);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .code-block {
     background: #2c3e50;
-    color: #fff;
-    padding: 0.8rem;
-    border-radius: 6px;
-    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
     overflow-x: auto;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .code-block code {
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    white-space: pre;
     color: #e0e0e0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: block;
+    margin: 0.5rem 0;
 }
 
-.code-block code:not(:last-child) {
-    margin-bottom: 0.3rem;
-}
-
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .prerequisites-card {
-        padding: 1.2rem;
+    .tabs-header {
+        flex-direction: column;
     }
     
-    .setup-steps li {
-        margin-bottom: 0.8rem;
+    .tab-btn {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+    }
+    
+    .setup-step {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
     }
 }
 
@@ -367,16 +416,44 @@ nav {
     transition: all 0.3s ease;
     text-align: center;
     border: 1px solid rgba(52, 152, 219, 0.1);
+    position: relative;
+    transform: translateY(0);
+}
+
+.assignment-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 .assignment-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.assignment-card:hover .assignment-number {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .assignment-icon {
     font-size: 2.5rem;
     color: #3498db;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .assignment-card h3 {
@@ -867,4 +944,37 @@ code[class*="language-"] {
 .resources-section a:hover {
     color: #2980b9;
     text-decoration: underline;
+}
+
+/* Section Titles */
+.prerequisites h2,
+.assignments h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.prerequisites h2:after,
+.assignments h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    border-radius: 2px;
+}
+
+/* Remove individual section title styles */
+.prerequisites h2 {
+    /* Remove individual styles as they're now in the shared section */
+}
+
+.assignments h2 {
+    /* Remove individual styles as they're now in the shared section */
 } 
