@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none;">Agentic AI Workshop</a>
+            <ul class="nav-links">
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#assignments">Assignments</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agentic AI</h1>
+            <h2>Build a Multi-Agent Application with CrewAI</h2>
+            <div class="social-links">
+                <a href="https://github.com/pigna90" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alessandro-romano-1990" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="prerequisites" class="prerequisites">
+        <h2>Setup Prerequisites</h2>
+        <div class="prerequisites-content">
+            <div class="prerequisites-card">
+                <div class="prerequisites-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h3>API Keys Setup</h3>
+                <ol class="setup-steps">
+                    <li>
+                        <strong>OpenAI API Key</strong>
+                        <p>Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a></p>
+                    </li>
+                    <li>
+                        <strong>SerperDev API Key</strong>
+                        <p>Get your API key from <a href="https://serper.dev/" target="_blank">SerperDev</a></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="prerequisites-card">
+                <div class="prerequisites-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h3>Installation & Setup</h3>
+                <ol class="setup-steps">
+                    <li>
+                        <strong>Install crewAI</strong>
+                        <div class="code-block">
+                            <code>pip install crewai</code>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Environment Variables</strong>
+                        <div class="code-block">
+                            <code>export OPENAI_API_KEY='your-openai-key'</code>
+                            <code>export SERPER_API_KEY='your-serper-key'</code>
+                        </div>
+                        <p>For Windows, use:</p>
+                        <div class="code-block">
+                            <code>set OPENAI_API_KEY=your-openai-key</code>
+                            <code>set SERPER_API_KEY=your-serper-key</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="assignments" class="assignments">
+        <h2>My Assignments</h2>
+        <div class="assignment-grid">
+            <div class="assignment-card">
+                <div class="assignment-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Your First Agent</h3>
+                <p>Learn how to create and deploy your first AI agent using CrewAI, from basic setup to simple task automation.</p>
+                <a href="your-first-agent.html" class="btn">View Details</a>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Content Creation with Guardrails</h3>
+                <p>Build an AI system that generates content based on user input while ensuring it adheres to safety guidelines, avoiding violence and inappropriate content.</p>
+                <a href="content-creation-guardrails.html" class="btn">View Details</a>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Fraud Detection Workflow</h3>
+                <p>Develop an AI system that analyzes and classifies transactions to identify potential fraudulent activities based on transaction patterns and behaviors.</p>
+                <a href="fraud-detection-workflow.html" class="btn">View Details</a>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>AI-Powered Onboarding System</h3>
+                <p>Create an intelligent onboarding system that personalizes the user experience using AI agents.</p>
+                <a href="ai-onboarding-system.html" class="btn">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Alessandro Romano. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

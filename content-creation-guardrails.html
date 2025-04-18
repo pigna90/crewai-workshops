@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation Guardrails - Agentic AI Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Add Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <!-- Add Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Add Python language support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none;">Agentic AI Workshop</a>
+            <ul class="nav-links">
+                <li><a href="index.html#prerequisites">Prerequisites</a></li>
+                <li><a href="index.html#assignments">Assignments</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Content Creation Guardrails</h1>
+        
+        <section class="task-explanation">
+            <h2>Task Overview</h2>
+            <p>In this assignment, you'll implement guardrails for AI-generated content to ensure it meets quality and safety standards. You'll learn how to validate, filter, and moderate AI outputs effectively.</p>
+        </section>
+
+        <section class="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">Python Documentation</a> - Official Python tutorial</li>
+                <li><a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python Library</a> - For AI integration</li>
+                <li><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8 Style Guide</a> - Python code style conventions</li>
+            </ul>
+        </section>
+
+        <section class="code-snippet">
+            <h2>Code Example</h2>
+            <pre><code class="language-python">
+class ContentGuardrail:
+    def __init__(self, api_key):
+        self.api_key = api_key
+        openai.api_key = api_key
+
+    def validate_content(self, content):
+        # Check for inappropriate content
+        if self._contains_inappropriate_content(content):
+            return False, "Content contains inappropriate material"
+        
+        # Check for quality standards
+        if not self._meets_quality_standards(content):
+            return False, "Content does not meet quality standards"
+        
+        return True, "Content approved"
+
+    def _contains_inappropriate_content(self, content):
+        # Implement content moderation logic
+        inappropriate_keywords = ["hate", "violence", "explicit"]
+        return any(keyword in content.lower() for keyword in inappropriate_keywords)
+
+    def _meets_quality_standards(self, content):
+        # Implement quality check logic
+        min_length = 100
+        return len(content) >= min_length
+
+# Example usage
+if __name__ == "__main__":
+    guardrail = ContentGuardrail("your-api-key-here")
+    content = "This is a sample content that meets all standards."
+    is_valid, message = guardrail.validate_content(content)
+    print(f"Validation result: {is_valid}")
+    print(f"Message: {message}")
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Alessandro Romano. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

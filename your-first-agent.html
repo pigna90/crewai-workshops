@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your First Agent - Agentic AI Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Add Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <!-- Add Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Add Python language support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none;">Agentic AI Workshop</a>
+            <ul class="nav-links">
+                <li><a href="index.html#prerequisites">Prerequisites</a></li>
+                <li><a href="index.html#assignments">Assignments</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your First Agent</h1>
+        
+        <section class="task-explanation">
+            <h2>Task Overview</h2>
+            <p>In this assignment, you'll create your first AI agent using Python. You'll learn how to set up the basic structure, implement core functionality, and make your agent interact with users.</p>
+        </section>
+
+        <section class="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">Python Documentation</a> - Official Python tutorial</li>
+                <li><a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python Library</a> - For AI integration</li>
+                <li><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8 Style Guide</a> - Python code style conventions</li>
+            </ul>
+        </section>
+
+        <section class="code-snippet">
+            <h2>Code Example</h2>
+            <pre><code class="language-python">
+import openai
+
+class Agent:
+    def __init__(self, api_key):
+        self.api_key = api_key
+        openai.api_key = api_key
+
+    def process_input(self, user_input):
+        # Your agent's logic here
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": user_input}]
+        )
+        return response.choices[0].message.content
+
+# Example usage
+if __name__ == "__main__":
+    agent = Agent("your-api-key-here")
+    response = agent.process_input("Hello, agent!")
+    print(response)
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Alessandro Romano. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
