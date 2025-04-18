@@ -61,7 +61,7 @@ nav {
 .hero {
     background: linear-gradient(135deg, #3498db, #2c3e50);
     color: white;
-    padding: 8rem 5%;
+    padding: 4rem 5%;
     text-align: center;
     margin-top: 60px;
 }
@@ -73,14 +73,37 @@ nav {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
-    font-weight: 400;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-description a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.hero-description a:hover {
+    opacity: 0.8;
 }
 
 .hero p {
@@ -99,7 +122,7 @@ nav {
 
 .hero .social-links a {
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
@@ -690,4 +713,178 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.task-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.intro {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.agents-section {
+    margin: 30px 0;
+}
+
+.agent-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.agent-card h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.input-section {
+    margin: 30px 0;
+}
+
+.input-list {
+    list-style: none;
+    padding: 0;
+}
+
+.input-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.input-list i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.context-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #e8f4f8;
+    border-radius: 8px;
+}
+
+.context-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.process-flow {
+    margin: 20px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.flow-step {
+    flex: 1;
+    width: 22%;
+    text-align: center;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flow-step:hover {
+    transform: translateY(-3px);
+}
+
+.step-icon {
+    font-size: 1.2em;
+    color: #3498db;
+    margin-bottom: 3px;
+}
+
+.step-content h4 {
+    color: #2c3e50;
+    margin-bottom: 2px;
+    font-size: 0.85em;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 0.75em;
+    margin: 0;
+}
+
+.flow-arrow {
+    color: #3498db;
+    font-size: 1em;
+    padding: 0 2px;
+}
+
+@media (max-width: 768px) {
+    .flow-container {
+        flex-wrap: wrap;
+    }
+    
+    .flow-step {
+        width: 45%;
+        margin-bottom: 10px;
+    }
+    
+    .flow-arrow {
+        display: none;
+    }
+}
+
+.resources-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.resources-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.resources-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resources-section li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.resources-section a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resources-section a:hover {
+    color: #2980b9;
+    text-decoration: underline;
 } 

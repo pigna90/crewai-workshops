@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Onboarding System - Agentic AI Workshop</title>
+    <title>AI Onboarding System - Agentic AI Workshop</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Add Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <!-- Add Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Add Python language support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +26,107 @@
     </header>
 
     <main>
-        <h1>AI-Powered Onboarding System</h1>
+        <h1>AI Onboarding System</h1>
+        
+        <section class="task-explanation">
+            <div class="task-content">
+                <p class="intro">In this assignment, you'll create your first multi-agent AI application that focuses on prompt engineering and optimization. The application will consist of two specialized agents working together to enhance user prompts:</p>
+                
+                <div class="process-flow">
+                    <div class="flow-container">
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+                            <div class="step-content">
+                                <h4>Inputs</h4>
+                                <p>User Prompt & Target LLM</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="step-content">
+                                <h4>Improve Structure</h4>
+                                <p>Enhances prompt structure</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-robot"></i></div>
+                            <div class="step-content">
+                                <h4>Optimize</h4>
+                                <p>For target model</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-code"></i></div>
+                            <div class="step-content">
+                                <h4>Output</h4>
+                                <p>Enhanced Prompt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="context-section">
+                    <h3>How It Works</h3>
+                    <p>This is similar to what happens behind the scenes when you use ChatGPT - the system automatically enhances and optimizes your input to get better results from the language model.</p>
+                </div>
+                
+                <div class="agents-section">
+                    <h3>Agent Components</h3>
+                    <div class="agent-card">
+                        <h4>Prompt Structure Agent</h4>
+                        <p>This agent will improve the structure of the input prompt, as well as the clarity and completeness.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>LLM Optimization Agent</h4>
+                        <p>Ensures the prompt is optimized for the specific LLM model it will be executed on, taking into account model capabilities and best practices.</p>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>Required Inputs</h3>
+                    <ul class="input-list">
+                        <li><i class="fas fa-keyboard"></i> The original prompt from the user</li>
+                        <li><i class="fas fa-robot"></i> The target LLM model for execution</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <h2>Useful Resources</h2>
+            <ul>
+                <li><a href="https://docs.crewai.com/concepts/agents" target="_blank">Agents</a> - Learn about CrewAI agents</li>
+                <li><a href="https://docs.crewai.com/concepts/tasks" target="_blank">Tasks</a> - Understand how to create and manage tasks</li>
+                <li><a href="https://docs.crewai.com/concepts/crews" target="_blank">Crews</a> - Learn about CrewAI crews and their organization</li>
+                <li><a href="https://docs.crewai.com/concepts/processes" target="_blank">Process Sequential</a> - Understand sequential processing in CrewAI</li>
+                <li><a href="https://docs.crewai.com/concepts/llms" target="_blank">LLM Agnostic</a> - Learn about LLM agnostic features in CrewAI</li>
+            </ul>
+        </section>
+
+        <section class="code-snippet">
+            <h2>Code Examples</h2>
+            
+            <h3>Passing input to the Tasks</h3>
+            <pre><code class="language-python">set_and_track_goals = Task(
+    description=f"Set the user's fitness goal to {fitness_goal} and track their progress with a "
+                f"personalized plan, also take into account the last weight measurements: {historical_weight_data}.",
+    expected_output="A fitness plan for muscle gain and progress tracking setup.",
+    agent=fitness_tracker_agent,
+)
+...
+crew.kickoff(inputs={'fitness_goal': 'Muscle gain', 
+                     'historical_weight_data': ".".join([80, 85, 82, 84, 83])})</code></pre>
+
+            <h3>How to use expected_output</h3>
+            <pre><code class="language-python">enhance_prompt_task = Task(
+    description="Improve this prompt ({initial_prompt}) to make it more descriptive and detailed for image generation.",
+    expected_output='"image_description": "Enhanced Prompt here',
+    agent=prompt_improver_agent
+)</code></pre>
+        </section>
     </main>
 
     <footer>
