@@ -1,6 +1,6 @@
-# PyCon DE 2025 Workshop
+# CrewAI PyCon DE Workshop 2025
 
-This repository contains the materials and assignments for the PyCon DE 2025 workshop. The website serves as a central hub to guide participants through the hands-on learning session.
+This repository contains the materials and assignments for the CrewAI workshop at PyCon DE 2025. The website serves as a central hub to guide participants through the hands-on learning session.
 
 ## Overview
 
@@ -14,3 +14,7 @@ A hands-on Python workshop featuring:
 1. **Assignments**: Practical exercises
 2. **Guides**: Instructions and explanations
 3. **Resources**: Additional learning materials
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
