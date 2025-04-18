@@ -500,66 +500,50 @@ footer {
 
 .project-info {
     text-align: center;
-    max-width: none;
+    max-width: 800px;
     margin: 0 auto;
-    white-space: nowrap;
-    overflow: visible;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 2rem;
 }
 
 .project-info h1 {
     font-size: 2.5rem;
     color: #2c3e50;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     position: relative;
-    padding-bottom: 1rem;
-    font-weight: 600;
+    display: inline-block;
 }
 
 .project-info h1:after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right, #3498db, #2c3e50);
-    border-radius: 2px;
+    width: 50%;
+    height: 3px;
+    background: #3498db;
+    bottom: -10px;
+    left: 25%;
 }
 
 .project-info h2 {
     font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
+    color: #34495e;
+    margin-bottom: 2rem;
 }
 
 .project-info p {
     font-size: 1.1rem;
-    color: #666;
     line-height: 1.8;
+    color: #666;
     margin-bottom: 2rem;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    width: fit-content;
-    text-align: center;
 }
 
 .project-info p a {
     color: #3498db;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .project-info p a:hover {
     color: #2980b9;
-    text-decoration: underline;
 }
 
 .conference-link {
@@ -570,18 +554,14 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: #3498db;
-    color: white;
+    color: #3498db;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .conference-link a:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
+    color: #2980b9;
 }
 
 .social-links {
