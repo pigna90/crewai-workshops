@@ -31,39 +31,39 @@
         
         <section class="task-explanation">
             <div class="task-content">
-                <p class="intro">In this assignment, you'll create your first multi-agent AI application that focuses on prompt engineering and optimization. The application will consist of two specialized agents working together to enhance user prompts:</p>
+                <p class="intro">In this assignment, you'll create a multi-agent AI application designed for automated social media content creation (like LinkedIn posts) with built-in safety guardrails. The system will ensure that generated content is appropriate and free from harmful elements like violence, as the process will be automated without manual review.</p>
                 
                 <div class="process-flow">
                     <div class="flow-container">
                         <div class="flow-step">
                             <div class="step-icon"><i class="fas fa-keyboard"></i></div>
                             <div class="step-content">
-                                <h4>Inputs</h4>
-                                <p>User Prompt & Target LLM</p>
+                                <h4>Input</h4>
+                                <p>Content Topic & Platform</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="step-icon"><i class="fas fa-pen-fancy"></i></div>
                             <div class="step-content">
-                                <h4>Improve Structure</h4>
-                                <p>Enhances prompt structure</p>
+                                <h4>Content Creation</h4>
+                                <p>Generates initial content</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-robot"></i></div>
+                            <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
                             <div class="step-content">
-                                <h4>Optimize</h4>
-                                <p>For target model</p>
+                                <h4>Safety Check</h4>
+                                <p>Content moderation</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-code"></i></div>
+                            <div class="step-icon"><i class="fas fa-check-circle"></i></div>
                             <div class="step-content">
                                 <h4>Output</h4>
-                                <p>Enhanced Prompt</p>
+                                <p>Safe, Platform-Optimized Content</p>
                             </div>
                         </div>
                     </div>
@@ -71,26 +71,30 @@
 
                 <div class="context-section">
                     <h3>How It Works</h3>
-                    <p>This is similar to what happens behind the scenes when you use ChatGPT - the system automatically enhances and optimizes your input to get better results from the language model.</p>
+                    <p>Using CrewAI's Flow feature, we can control the sequence of operations and ensure that content passes through necessary safety checks before being published. This is crucial for automated social media posting where each piece of content needs to be verified for appropriateness.</p>
                 </div>
                 
                 <div class="agents-section">
-                    <h3>Agent Components</h3>
+                    <h3>Components</h3>
                     <div class="agent-card">
-                        <h4>Prompt Structure Agent</h4>
-                        <p>This agent will improve the structure of the input prompt, as well as the clarity and completeness.</p>
+                        <h4>Crew</h4>
+                        <p>A specialized team of agents working together to create and moderate content. The crew includes a content creator for generating posts and a safety moderator for ensuring content appropriateness.</p>
                     </div>
                     <div class="agent-card">
-                        <h4>LLM Optimization Agent</h4>
-                        <p>Ensures the prompt is optimized for the specific LLM model it will be executed on, taking into account model capabilities and best practices.</p>
+                        <h4>Pydantic Flow State</h4>
+                        <p>Manages the application's state throughout the content creation process. It tracks the content at each stage, from initial creation to final approval, ensuring data consistency and traceability.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>Flow Implementation</h4>
+                        <p>Leverages CrewAI's Flow class to orchestrate the sequence of operations. The flow ensures that content is created, checked for safety, and approved in the correct order before being published.</p>
                     </div>
                 </div>
 
                 <div class="input-section">
                     <h3>Required Inputs</h3>
                     <ul class="input-list">
-                        <li><i class="fas fa-keyboard"></i> The original prompt from the user</li>
-                        <li><i class="fas fa-robot"></i> The target LLM model for execution</li>
+                        <li><i class="fas fa-tags"></i> Tags for the content</li>
+                        <li><i class="fas fa-share-alt"></i> Target platform</li>
                     </ul>
                 </div>
             </div>
@@ -99,34 +103,76 @@
         <section class="resources-section">
             <h2>Useful Resources</h2>
             <ul>
-                <li><a href="https://docs.crewai.com/concepts/agents" target="_blank">Agents</a> - Learn about CrewAI agents</li>
-                <li><a href="https://docs.crewai.com/concepts/tasks" target="_blank">Tasks</a> - Understand how to create and manage tasks</li>
-                <li><a href="https://docs.crewai.com/concepts/crews" target="_blank">Crews</a> - Learn about CrewAI crews and their organization</li>
-                <li><a href="https://docs.crewai.com/concepts/processes" target="_blank">Process Sequential</a> - Understand sequential processing in CrewAI</li>
-                <li><a href="https://docs.crewai.com/concepts/llms" target="_blank">LLM Agnostic</a> - Learn about LLM agnostic features in CrewAI</li>
+                <li><a href="https://medium.com/data-science/how-to-implement-guardrails-for-your-ai-agents-with-crewai-80b8cb55fa43" target="_blank">Implementing guardrails with crewai flow</a> - Learn how to implement safety guardrails using CrewAI Flow</li>
+                <li><a href="https://docs.crewai.com/concepts/flows" target="_blank">Official flow docs</a> - Official documentation for CrewAI Flows</li>
             </ul>
         </section>
 
         <section class="code-snippet">
             <h2>Code Examples</h2>
             
-            <h3>Passing input to the Tasks</h3>
-            <pre><code class="language-python">set_and_track_goals = Task(
-    description=f"Set the user's fitness goal to {fitness_goal} and track their progress with a "
-                f"personalized plan, also take into account the last weight measurements: {historical_weight_data}.",
-    expected_output="A fitness plan for muscle gain and progress tracking setup.",
-    agent=fitness_tracker_agent,
-)
-...
-crew.kickoff(inputs={'fitness_goal': 'Muscle gain', 
-                     'historical_weight_data': ".".join([80, 85, 82, 84, 83])})</code></pre>
+            <h3>Travel Advisor Flow</h3>
+            <pre><code class="language-python">from pydantic import BaseModel, Field
+from typing import List
+from crewai.flow.flow import Flow, start, listen, router
 
-            <h3>How to use expected_output</h3>
-            <pre><code class="language-python">enhance_prompt_task = Task(
-    description="Improve this prompt ({initial_prompt}) to make it more descriptive and detailed for image generation.",
-    expected_output='"image_description": "Enhanced Prompt here',
-    agent=prompt_improver_agent
-)</code></pre>
+class TravelState(BaseModel):
+    vacation_plan: str = ""
+    is_plan_valid: bool = False
+    generation_attempts_left: int = 2
+
+class TravelAdvisorFlow(Flow[TravelState]):
+    names: List[str] = Field(description="List of travelers")
+    city: str = Field(description="Departure city")
+    destination: str = Field(description="Dest city")
+
+    def __init__(self, names: List[str], city: str, destination: str):
+        super().__init__()
+        self.names = names
+        self.city = city
+        self.destination = destination
+
+    @start()
+    def generate_vacation_plan(self):
+        print("Generating vacation plan")
+        task = create_vacation_plan_task(self.names, self.city, self.destination)
+        crew = Crew(agents=[planner_agent], tasks=[task])
+        result = crew.kickoff()
+        self.state.vacation_plan = result.raw
+        print("Vacation plan generated!")
+
+    @listen(generate_vacation_plan)
+    def validate_vacation_plan(self):
+        print("Start validation of the plan...")
+        task = validate_vacation_plan_task(self.state.vacation_plan)
+        crew = Crew(agents=[validator_agent], tasks=[task])
+        result = crew.kickoff()
+        self.state.is_plan_valid = "Valid" in result.raw
+        print("Validation complete", "Valid" if self.state.is_plan_valid else "Invalid")
+
+    @router(validate_vacation_plan)
+    def route_vacation_plan(self):
+        if self.state.is_plan_valid:
+            return "valid"
+        elif self.state.generation_attempts_left == 0:
+            return "not_feasible"
+        else:
+            return "regenerate"
+
+    @listen("valid")
+    def finalize_vacation_plan(self):
+        with open("vacation_plan.txt", "w") as file:
+            file.write(self.state.vacation_plan)
+        print("Vacation plan saved in file")
+
+    @listen("regenerate")
+    def regenerate_vacation_plan(self):
+        self.state.generation_attempts_left -= 1
+        self.generate_vacation_plan()
+
+    @listen("not_feasible")
+    def notify_user(self):
+        print("Plan is not feasible, I'm sorry :(")</code></pre>
         </section>
     </main>
 
