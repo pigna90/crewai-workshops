@@ -502,6 +502,7 @@ footer {
     margin-top: auto;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .footer-content {
@@ -559,24 +560,59 @@ footer {
 
 /* About Section */
 .about-section {
-    padding: 0;
+    padding: 8rem 2rem 2rem;
+    background-color: #f8f9fa;
     min-height: calc(100vh - 60px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    text-align: center;
     margin-top: 0;
-    flex: 1;
-    padding-bottom: 2rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-image {
+    width: 150px;
+    height: 150px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    transform-origin: center;
+}
+
+.logo-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.3)) 
+            drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.3)) 
+                drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.4)) 
+                drop-shadow(0 15px 20px rgba(0, 0, 0, 0.3));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.3)) 
+                drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+    }
 }
 
 .about-content {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     padding: 1rem;
     text-align: center;
     margin: 0 auto;
+    flex: 1;
 }
 
 .about-card {
@@ -586,8 +622,9 @@ footer {
     padding: 2rem;
     transition: transform 0.3s ease;
     margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
+    width: fit-content;
+    min-width: 1000px;
+    max-width: 1100px;
     text-align: center;
 }
 
@@ -597,7 +634,9 @@ footer {
 
 .project-info {
     text-align: center;
-    max-width: 800px;
+    width: fit-content;
+    min-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 1rem;
 }
@@ -621,9 +660,22 @@ footer {
 }
 
 .project-info h2 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.project-info h2:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #3498db;
+    bottom: -10px;
+    left: 25%;
 }
 
 .project-info p {
@@ -687,26 +739,19 @@ footer {
     transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        padding: 1rem;
-    }
-    
+@media (max-width: 1100px) {
     .about-card {
-        padding: 2rem;
-        margin: 1rem;
+        min-width: 95vw;
+        max-width: 95vw;
     }
     
     .project-info {
-        padding: 1rem;
-    }
-    
-    .project-info h1 {
-        font-size: 2rem;
+        min-width: 95vw;
+        max-width: 95vw;
     }
     
     .project-info h2 {
-        font-size: 1.5rem;
+        white-space: normal;
     }
 }
 
