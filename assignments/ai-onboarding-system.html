@@ -31,39 +31,39 @@
         
         <section class="task-explanation">
             <div class="task-content">
-                <p class="intro">In this assignment, you'll create your first multi-agent AI application that focuses on prompt engineering and optimization. The application will consist of two specialized agents working together to enhance user prompts:</p>
+                <p class="intro">In this assignment, you'll create an AI-powered onboarding system that automates and parallelizes various onboarding tasks for new joiners. The system will use multiple agents to handle different aspects of the onboarding process efficiently.</p>
                 
                 <div class="process-flow">
                     <div class="flow-container">
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+                            <div class="step-icon"><i class="fas fa-user-plus"></i></div>
                             <div class="step-content">
-                                <h4>Inputs</h4>
-                                <p>User Prompt & Target LLM</p>
+                                <h4>Collect Info</h4>
+                                <p>New joiner details</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
                             <div class="step-content">
-                                <h4>Improve Structure</h4>
-                                <p>Enhances prompt structure</p>
+                                <h4>Validate Date</h4>
+                                <p>Check availability</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-robot"></i></div>
+                            <div class="step-icon"><i class="fas fa-envelope"></i></div>
                             <div class="step-content">
-                                <h4>Optimize</h4>
-                                <p>For target model</p>
+                                <h4>Create Email</h4>
+                                <p>Set up work account</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-code"></i></div>
+                            <div class="step-icon"><i class="fas fa-file-alt"></i></div>
                             <div class="step-content">
-                                <h4>Output</h4>
-                                <p>Enhanced Prompt</p>
+                                <h4>Generate Report</h4>
+                                <p>Onboarding summary</p>
                             </div>
                         </div>
                     </div>
@@ -71,26 +71,32 @@
 
                 <div class="context-section">
                     <h3>How It Works</h3>
-                    <p>This is similar to what happens behind the scenes when you use ChatGPT - the system automatically enhances and optimizes your input to get better results from the language model.</p>
+                    <p>The system is designed to handle multiple onboarding processes simultaneously. Each new joiner gets their own dedicated crew of agents, allowing the system to process multiple onboardings in parallel. This means that while one person is having their email set up, another can be going through the date validation process, and another can be receiving their onboarding report - all happening at the same time.</p>
                 </div>
                 
                 <div class="agents-section">
                     <h3>Agent Components</h3>
                     <div class="agent-card">
-                        <h4>Prompt Structure Agent</h4>
-                        <p>This agent will improve the structure of the input prompt, as well as the clarity and completeness.</p>
+                        <h4>Date Validator Agent</h4>
+                        <p>Checks the availability and coordinates the start date with the new joiner and relevant departments.</p>
                     </div>
                     <div class="agent-card">
-                        <h4>LLM Optimization Agent</h4>
-                        <p>Ensures the prompt is optimized for the specific LLM model it will be executed on, taking into account model capabilities and best practices.</p>
+                        <h4>Email Setup Agent</h4>
+                        <p>Creates and configures the work email account with appropriate permissions and access levels.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>Report Generator Agent</h4>
+                        <p>Compiles all onboarding information and generates a comprehensive report for HR and the new joiner.</p>
                     </div>
                 </div>
 
                 <div class="input-section">
                     <h3>Required Inputs</h3>
                     <ul class="input-list">
-                        <li><i class="fas fa-keyboard"></i> The original prompt from the user</li>
-                        <li><i class="fas fa-robot"></i> The target LLM model for execution</li>
+                        <li><i class="fas fa-user"></i> New joiner's personal information</li>
+                        <li><i class="fas fa-calendar"></i> Preferred start date</li>
+                        <li><i class="fas fa-briefcase"></i> Role and department details</li>
+                        <li><i class="fas fa-laptop"></i> Technical requirements</li>
                     </ul>
                 </div>
             </div>
@@ -99,34 +105,29 @@
         <section class="resources-section">
             <h2>Useful Resources</h2>
             <ul>
-                <li><a href="https://docs.crewai.com/concepts/agents" target="_blank">Agents</a> - Learn about CrewAI agents</li>
-                <li><a href="https://docs.crewai.com/concepts/tasks" target="_blank">Tasks</a> - Understand how to create and manage tasks</li>
-                <li><a href="https://docs.crewai.com/concepts/crews" target="_blank">Crews</a> - Learn about CrewAI crews and their organization</li>
-                <li><a href="https://docs.crewai.com/concepts/processes" target="_blank">Process Sequential</a> - Understand sequential processing in CrewAI</li>
-                <li><a href="https://docs.crewai.com/concepts/llms" target="_blank">LLM Agnostic</a> - Learn about LLM agnostic features in CrewAI</li>
+                <li><a href="https://docs.crewai.com/how-to/kickoff-async" target="_blank">Kickoff Crew Asynchronously</a> - Learn how to run crews asynchronously</li>
+                <li><a href="https://docs.crewai.com/how-to/create-custom-tools" target="_blank">Create Custom Tools</a> - Learn how to create custom tools for your agents</li>
             </ul>
         </section>
 
         <section class="code-snippet">
             <h2>Code Examples</h2>
             
-            <h3>Passing input to the Tasks</h3>
-            <pre><code class="language-python">set_and_track_goals = Task(
-    description=f"Set the user's fitness goal to {fitness_goal} and track their progress with a "
-                f"personalized plan, also take into account the last weight measurements: {historical_weight_data}.",
-    expected_output="A fitness plan for muscle gain and progress tracking setup.",
-    agent=fitness_tracker_agent,
-)
-...
-crew.kickoff(inputs={'fitness_goal': 'Muscle gain', 
-                     'historical_weight_data': ".".join([80, 85, 82, 84, 83])})</code></pre>
+            <h3>Asynchronous Crew Execution</h3>
+            <pre><code class="language-python">scheduled_posts = {
+    "posts": [
+        "Post: 'AI in 2025', scheduled for 2024-07-15, category: Technology",
+        "Post: 'Marketing Trends', scheduled for 2024-07-16, category: Business",
+        "Post: 'Sales Playbook', scheduled for 2024-07-17, category: Strategy"
+    ]
+}
 
-            <h3>How to use expected_output</h3>
-            <pre><code class="language-python">enhance_prompt_task = Task(
-    description="Improve this prompt ({initial_prompt}) to make it more descriptive and detailed for image generation.",
-    expected_output='"image_description": "Enhanced Prompt here',
-    agent=prompt_improver_agent
-)</code></pre>
+# Run asynchronous publishing workflows
+asyncio.run(async_publishing_execution(scheduled_posts))
+
+async def async_publishing_execution(scheduled_posts):
+    results = await publishing_crew.kickoff_async(inputs=scheduled_posts)
+    print("Crew result:", results.raw)</code></pre>
         </section>
     </main>
 

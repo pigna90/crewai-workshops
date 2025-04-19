@@ -31,39 +31,39 @@
         
         <section class="task-explanation">
             <div class="task-content">
-                <p class="intro">In this assignment, you'll create your first multi-agent AI application that focuses on prompt engineering and optimization. The application will consist of two specialized agents working together to enhance user prompts:</p>
+                <p class="intro">In this assignment, you'll create a multi-agent fraud detection system using CrewAI. The system will analyze transactions, detect anomalies, and escalate suspicious cases to specialized agents when necessary.</p>
                 
                 <div class="process-flow">
                     <div class="flow-container">
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+                            <div class="step-icon"><i class="fas fa-exchange-alt"></i></div>
                             <div class="step-content">
-                                <h4>Inputs</h4>
-                                <p>User Prompt & Target LLM</p>
+                                <h4>Input</h4>
+                                <p>Transaction Data</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="step-icon"><i class="fas fa-search"></i></div>
                             <div class="step-content">
-                                <h4>Improve Structure</h4>
-                                <p>Enhances prompt structure</p>
+                                <h4>Analyze</h4>
+                                <p>Detect Anomalies</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-robot"></i></div>
+                            <div class="step-icon"><i class="fas fa-exclamation-triangle"></i></div>
                             <div class="step-content">
-                                <h4>Optimize</h4>
-                                <p>For target model</p>
+                                <h4>Escalate</h4>
+                                <p>If Anomalies > N</p>
                             </div>
                         </div>
                         <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
                         <div class="flow-step">
-                            <div class="step-icon"><i class="fas fa-code"></i></div>
+                            <div class="step-icon"><i class="fas fa-file-alt"></i></div>
                             <div class="step-content">
-                                <h4>Output</h4>
-                                <p>Enhanced Prompt</p>
+                                <h4>Report</h4>
+                                <p>Final Analysis</p>
                             </div>
                         </div>
                     </div>
@@ -71,26 +71,30 @@
 
                 <div class="context-section">
                     <h3>How It Works</h3>
-                    <p>This is similar to what happens behind the scenes when you use ChatGPT - the system automatically enhances and optimizes your input to get better results from the language model.</p>
+                    <p>The fraud detection system uses multiple specialized agents working together under the supervision of an Agent Manager. Each agent has a specific role in analyzing transactions and detecting potential fraud.</p>
                 </div>
                 
                 <div class="agents-section">
                     <h3>Agent Components</h3>
                     <div class="agent-card">
-                        <h4>Prompt Structure Agent</h4>
-                        <p>This agent will improve the structure of the input prompt, as well as the clarity and completeness.</p>
+                        <h4>Transaction Analyzer Agent</h4>
+                        <p>Analyzes incoming transactions and identifies potential anomalies based on predefined rules and patterns.</p>
                     </div>
                     <div class="agent-card">
-                        <h4>LLM Optimization Agent</h4>
-                        <p>Ensures the prompt is optimized for the specific LLM model it will be executed on, taking into account model capabilities and best practices.</p>
+                        <h4>Fraud Specialist Agent</h4>
+                        <p>Handles escalated cases with high anomaly scores, performing in-depth analysis and verification.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>Report Generator Agent</h4>
+                        <p>Compiles the final report summarizing all analyzed transactions and their outcomes.</p>
                     </div>
                 </div>
 
                 <div class="input-section">
                     <h3>Required Inputs</h3>
                     <ul class="input-list">
-                        <li><i class="fas fa-keyboard"></i> The original prompt from the user</li>
-                        <li><i class="fas fa-robot"></i> The target LLM model for execution</li>
+                        <li><i class="fas fa-exchange-alt"></i> Transaction data (amount, location, time, etc.)</li>
+                        <li><i class="fas fa-sliders-h"></i> Anomaly threshold (N)</li>
                     </ul>
                 </div>
             </div>
@@ -99,34 +103,55 @@
         <section class="resources-section">
             <h2>Useful Resources</h2>
             <ul>
-                <li><a href="https://docs.crewai.com/concepts/agents" target="_blank">Agents</a> - Learn about CrewAI agents</li>
-                <li><a href="https://docs.crewai.com/concepts/tasks" target="_blank">Tasks</a> - Understand how to create and manage tasks</li>
-                <li><a href="https://docs.crewai.com/concepts/crews" target="_blank">Crews</a> - Learn about CrewAI crews and their organization</li>
-                <li><a href="https://docs.crewai.com/concepts/processes" target="_blank">Process Sequential</a> - Understand sequential processing in CrewAI</li>
-                <li><a href="https://docs.crewai.com/concepts/llms" target="_blank">LLM Agnostic</a> - Learn about LLM agnostic features in CrewAI</li>
+                <li><a href="https://docs.crewai.com/how-to/conditional-tasks" target="_blank">Conditional Tasks Documentation</a> - How to implement conditional task</li>
             </ul>
         </section>
 
         <section class="code-snippet">
             <h2>Code Examples</h2>
             
-            <h3>Passing input to the Tasks</h3>
-            <pre><code class="language-python">set_and_track_goals = Task(
-    description=f"Set the user's fitness goal to {fitness_goal} and track their progress with a "
-                f"personalized plan, also take into account the last weight measurements: {historical_weight_data}.",
-    expected_output="A fitness plan for muscle gain and progress tracking setup.",
-    agent=fitness_tracker_agent,
-)
-...
-crew.kickoff(inputs={'fitness_goal': 'Muscle gain', 
-                     'historical_weight_data': ".".join([80, 85, 82, 84, 83])})</code></pre>
+            <h3>Transaction Data (use this as input data)</h3>
+            <pre><code class="language-python">transaction_list = [
+    # Normal Transactions
+    "TXN1 | Withdrawal | $500 | ATM | New York | 2024-07-01 14:23 | Card Ending: 1234",
+    "TXN2 | Online Purchase | $200 | Electronics Store | San Francisco | 2024-07-02 09:45 | IP: 192.168.0.1",
+    "TXN3 | Transfer | $1,000 | Bank Account | Zurich | 2024-07-02 17:10 | Beneficiary: John Doe",
+    "TXN4 | POS Purchase | $50 | Grocery Store | Berlin | 2024-07-03 12:30 | Card Ending: 5678",
+    "TXN5 | Withdrawal | $400 | ATM | Dubai | 2024-07-04 08:15 | Card Ending: 1234",
+    "TXN6 | Online Purchase | $150 | Retail Store | Paris | 2024-07-04 20:50 | IP: 10.0.0.2",
+    "TXN7 | Transfer | $2,000 | Bank Account | London | 2024-07-05 11:30 | Beneficiary: Jane Smith",
+    "TXN8 | POS Purchase | $30 | Coffee Shop | New York | 2024-07-05 15:00 | Card Ending: 5678",
+    "TXN9 | Withdrawal | $200 | ATM | San Francisco | 2024-07-06 10:00 | Card Ending: 1234",
+    "TXN10 | Online Purchase | $300 | Bookstore | Berlin | 2024-07-06 13:45 | IP: 10.0.0.5",
 
-            <h3>How to use expected_output</h3>
-            <pre><code class="language-python">enhance_prompt_task = Task(
-    description="Improve this prompt ({initial_prompt}) to make it more descriptive and detailed for image generation.",
-    expected_output='"image_description": "Enhanced Prompt here',
-    agent=prompt_improver_agent
-)</code></pre>
+    # Anomalies
+    "TXN11 | Withdrawal | $9,999 | ATM | Las Vegas | 2024-07-07 03:15 | Card Ending: 9999",  # High Amount, Odd Time
+    "TXN12 | Transfer | $50,000 | Offshore Account | Cayman Islands | 2024-07-07 05:00 | Beneficiary: Unknown",  # Offshore Account
+    "TXN13 | Online Purchase | $5,500 | Luxury Retailer | Unknown Location | 2024-07-07 23:59 | IP: 255.255.255.0",  # Suspicious IP and Location
+    "TXN14 | Withdrawal | $7,000 | ATM | Dubai | 2024-07-08 02:30 | Card Ending: 0000",  # Odd Time, High Amount
+    "TXN15 | POS Purchase | $1 | Jewelry Store | New York | 2024-07-08 14:00 | Card Ending: 5678",  # Unusually Low Amount
+    "TXN16 | Online Purchase | $10,000 | Electronics | Hong Kong | 2024-07-08 22:45 | IP: 192.0.2.1",  # Large Online Purchase
+    "TXN17 | Transfer | $25,000 | Bank Account | Zurich | 2024-07-09 16:10 | Beneficiary: Suspicious Entity",  # High Value Transfer
+    "TXN18 | Withdrawal | $6,000 | ATM | Remote Location | 2024-07-09 04:45 | Card Ending: 8888",  # Remote Location, Odd Time
+    "TXN19 | POS Purchase | $9,000 | Luxury Boutique | Paris | 2024-07-09 19:30 | Card Ending: 1234",  # Unusually High POS Purchase
+    "TXN20 | Online Purchase | $8,200 | Unknown Store | Unknown | 2024-07-09 21:15 | IP: 0.0.0.0"  # Untraceable IP, Unknown Store
+]</code></pre>
+
+            <h3>Conditional Task</h3>
+            <pre><code class="language-python">def is_escalation_needed(output: TaskOutput) -> bool:
+    return len(output.pydantic.defects) > 5
+
+class QualityCheckTaskOutput(BaseModel):
+    defects: List[str]
+
+def create_quality_check_tasks(product_batches: List[str]):
+    task1 = Task(
+        description=f"Inspect the following product batches and list any defects: {product_batches}",
+        agent=quality_inspector,
+        expected_output=f"List of detected defects for each product batch.",
+        output_pydantic=QualityCheckTaskOutput,
+    )
+    return [task1]</code></pre>
         </section>
     </main>
 
