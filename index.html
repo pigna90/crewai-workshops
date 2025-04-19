@@ -85,42 +85,43 @@
                             <div class="setup-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
-                                    <h3>Create Virtual Environment</h3>
+                                    <h3>Install Poetry (if not already installed)</h3>
                                     <div class="code-block">
-                                        <code>python -m venv crewai-env</code>
+                                        <code>curl -sSL https://install.python-poetry.org | python3 -</code>
                                     </div>
                                 </div>
                             </div>
                             <div class="setup-step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
-                                    <h3>Activate Environment</h3>
+                                    <h3>Create Project</h3>
                                     <div class="code-block">
-                                        <code>source crewai-env/bin/activate  # macOS/Linux</code>
-                                        <code>crewai-env\Scripts\activate    # Windows</code>
+                                        <code>mkdir workshop-solutions</code>
+                                        <code>cd workshop-solutions</code>
+                                        <code>poetry init --no-interaction</code>
                                     </div>
                                 </div>
                             </div>
                             <div class="setup-step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <h3>Install crewAI</h3>
-                                    <div class="code-block">
-                                        <code>pip install crewai</code>
+                                    <h3>Download Configuration</h3>
+                                    <div class="step-description">
+                                        <p class="step-text">Download the configuration file and rename it to <code>pyproject.toml</code>:</p>
+                                        <div class="download-section">
+                                            <a href="/solutions/pyproject.toml.download" download class="download-btn">
+                                                <i class="fas fa-download"></i> Download pyproject.toml
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="setup-step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
-                                    <h3>Set API Keys</h3>
+                                    <h3>Install Dependencies</h3>
                                     <div class="code-block">
-                                        <code># macOS/Linux</code>
-                                        <code>export OPENAI_API_KEY='your-key'</code>
-                                        <code>export SERPER_API_KEY='your-key'</code>
-                                        <code># Windows</code>
-                                        <code>set OPENAI_API_KEY=your-key</code>
-                                        <code>set SERPER_API_KEY=your-key</code>
+                                        <code>poetry install</code>
                                     </div>
                                 </div>
                             </div>
