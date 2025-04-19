@@ -1,5 +1,9 @@
 # CrewAI PyCon DE Workshop 2025
 
+<div align="center">
+  <img src="public/favicon.png" alt="CrewAI Logo" width="200"/>
+</div>
+
 This repository contains the materials and assignments for the CrewAI workshop at PyCon DE 2025. The website serves as a central hub to guide participants through the hands-on learning session.
 
 ## Overview
