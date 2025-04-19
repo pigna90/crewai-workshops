@@ -12,6 +12,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header and Navigation */
@@ -498,6 +500,8 @@ footer {
     color: white;
     padding: 1rem 0;
     margin-top: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-content {
@@ -556,30 +560,34 @@ footer {
 /* About Section */
 .about-section {
     padding: 0;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f8f9fa;
     text-align: center;
+    margin-top: 0;
+    flex: 1;
+    padding-bottom: 2rem;
 }
 
 .about-content {
-    max-width: none;
-    width: auto;
-    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
     text-align: center;
+    margin: 0 auto;
 }
 
 .about-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    padding: 3rem;
+    padding: 2rem;
     transition: transform 0.3s ease;
     margin: 0 auto;
-    width: fit-content;
-    min-width: 300px;
+    width: 100%;
+    max-width: 800px;
     text-align: center;
 }
 
@@ -591,13 +599,13 @@ footer {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .project-info h1 {
     font-size: 2.5rem;
     color: #2c3e50;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
 }
@@ -615,14 +623,14 @@ footer {
 .project-info h2 {
     font-size: 1.8rem;
     color: #34495e;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .project-info p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #666;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .project-info p a {
@@ -636,7 +644,7 @@ footer {
 }
 
 .conference-link {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .conference-link a {
@@ -657,7 +665,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .social-links a {
@@ -686,6 +694,11 @@ footer {
     
     .about-card {
         padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .project-info {
+        padding: 1rem;
     }
     
     .project-info h1 {
@@ -694,14 +707,6 @@ footer {
     
     .project-info h2 {
         font-size: 1.5rem;
-    }
-    
-    .project-info {
-        white-space: normal;
-    }
-    
-    .project-info p {
-        white-space: normal;
     }
 }
 
