@@ -7,7 +7,8 @@ This directory contains the Python solutions for the workshop assignments. Each 
 ```
 solutions/
 ├── README.md
-├── requirements.txt
+├── pyproject.toml
+├── poetry.lock
 ├── assignment-1.py    # Solution for "Your First Agent"
 ├── assignment-2.py    # Solution for "Content Creation with Guardrails"
 ├── assignment-3.py    # Solution for "Fraud Detection Workflow"
@@ -17,22 +18,21 @@ solutions/
 ## Requirements
 
 All solutions share the same requirements:
-- Python 3.8+
+- Python >=3.10 <3.13
 - CrewAI
 - OpenAI API key
 - SerperDev API key
 
 ## Setup
 
-1. Create a virtual environment:
+1. Install Poetry if you haven't already:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
-2. Install requirements:
+2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   poetry install
    ```
 
 3. Set up your API keys:
@@ -50,8 +50,8 @@ All solutions share the same requirements:
 
 To run a specific solution:
 ```bash
-python assignment-1.py  # For the first assignment
-python assignment-2.py  # For the second assignment
+poetry run python assignment-1.py  # For the first assignment
+poetry run python assignment-2.py  # For the second assignment
 # and so on...
 ```
 
