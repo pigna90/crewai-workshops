@@ -66,6 +66,24 @@
                                     Get API Key
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
+                                <button class="alternative-providers-btn" onclick="toggleProviders()">
+                                    <i class="fas fa-exchange-alt"></i> Alternatives
+                                </button>
+                                <div class="alternative-providers" style="display: none;">
+                                    <h4>Alternative AI Model Providers</h4>
+                                    <ul class="providers-list">
+                                        <li><strong>Hugging Face</strong> – Free tier for models like Llama 3, Mistral; easy API key.</li>
+                                        <li><strong>OpenRouter</strong> – Aggregates open models, free to use with sign-up.</li>
+                                        <li><strong>Together AI</strong> – Trial credits for Llama 3, Mistral, and more.</li>
+                                        <li><strong>Google AI Studio</strong> – Free access to Gemini models for small projects.</li>
+                                        <li><strong>NVIDIA NIM</strong> – High-performance LLMs with a free tier.</li>
+                                        <li><strong>Cloudflare Workers AI</strong> – Run models at the edge for free.</li>
+                                        <li><strong>Cohere</strong> – Trial credits for text generation, classification APIs.</li>
+                                        <li><strong>AI21 Labs</strong> – Access to Jurassic-2 with free trial.</li>
+                                        <li><strong>DeepSeek</strong> – Cost-effective, free access to DeepSeek models.</li>
+                                        <li><strong>Llama API</strong> – Simple access to Meta's Llama 3 and others with free tier.</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="api-key-card">
                                 <div class="api-key-icon">
@@ -184,5 +202,86 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        function toggleProviders() {
+            const providers = document.querySelector('.alternative-providers');
+            const button = document.querySelector('.alternative-providers-btn');
+            
+            if (providers.style.display === 'none') {
+                providers.style.display = 'block';
+                button.innerHTML = '<i class="fas fa-times"></i> Close';
+            } else {
+                providers.style.display = 'none';
+                button.innerHTML = '<i class="fas fa-exchange-alt"></i> Alternatives';
+            }
+        }
+    </script>
+    <style>
+        .alternative-providers-btn {
+            margin-top: 8px;
+            margin-left: 8px;
+            padding: 8px 16px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .alternative-providers-btn:hover {
+            background-color: #357abd;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+        
+        .alternative-providers {
+            margin-top: 15px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e1e4e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .alternative-providers h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .providers-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        
+        .providers-list li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .providers-list li:before {
+            content: "•";
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .providers-list strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    </style>
 </body>
 </html> 
