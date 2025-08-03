@@ -410,6 +410,83 @@ nav {
     padding: 0 1rem;
 }
 
+/* Final project card spans full width */
+.assignment-card.final-project {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    color: white;
+    border: none;
+    position: relative;
+}
+
+.assignment-card.final-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
+}
+
+.assignment-card.final-project .assignment-number {
+    background: rgba(139, 92, 246, 0.9);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.assignment-card.final-project .assignment-icon {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.assignment-card.final-project h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    min-height: auto;
+}
+
+.assignment-card.final-project p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.assignment-card.final-project .btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.assignment-card.final-project .btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.assignment-card.final-project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.3);
+}
+
+.assignment-card.final-project:hover .assignment-number {
+    transform: translateX(-50%) translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 .assignment-card {
     background: #ffffff;
     padding: 2rem;

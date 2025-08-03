@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project: AI-Powered Interactive System - Agentic AI Workshop</title>
+    <link rel="icon" type="image/png" href="../public/favicon.png">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Add Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <!-- Add Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Add Python language support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" style="text-decoration: none;">Agentic AI Workshop</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#prerequisites">Prerequisites</a></li>
+                <li><a href="../index.html#assignments">Assignments</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Final Project: AI-Powered Interactive System</h1>
+        
+        <section class="task-explanation">
+            <div class="task-content">
+                <!-- Video Introduction -->
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <video width="100%" max-width="800px" controls preload="metadata" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <source src="../public/final-project-intro.mp4" type="video/mp4">
+                        <source src="../public/final-project-intro.mov" type="video/quicktime">
+                        <source src="../public/final-project-intro.webm" type="video/webm">
+                        Your browser does not support the video tag. 
+                        <a href="../public/final-project-intro.mp4" download>Download the video</a>
+                    </video>
+                    <p style="margin-top: 1rem; color: #666; font-style: italic;">Introduction to the Final Project</p>
+                </div>
+                
+                <p class="intro">🎯 <strong>Final Challenge:</strong> Build a comprehensive AI-powered interactive system using CrewAI and Streamlit. This project will demonstrate your mastery of multi-agent orchestration, real-time user interaction, and building production-ready applications.</p>
+                
+                <div class="process-flow">
+                    <div class="flow-container">
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="step-content">
+                                <h4>Research</h4>
+                                <p>Domain Analysis & Agent Design</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="step-content">
+                                <h4>Orchestrate</h4>
+                                <p>Multi-Agent Workflow</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-comments"></i></div>
+                            <div class="step-content">
+                                <h4>Interact</h4>
+                                <p>Chat Interface & STT</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="step-content">
+                                <h4>Deploy</h4>
+                                <p>Live AI Assistant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="context-section">
+                    <h3>🏆 Project Overview</h3>
+                    <p>Create an <strong>AI-powered interactive system</strong> that provides real-time assistance, analysis, or guidance in your chosen domain. Examples include: AI tutors, virtual assistants, content generators, analysis tools, or specialized advisors. Your system should demonstrate advanced agent orchestration, user interaction, and intelligent decision-making.</p>
+                </div>
+                
+                <div class="agents-section">
+                    <h3>🚀 System Requirements</h3>
+                    <div class="agent-card">
+                        <h4>🎯 Core Agent System</h4>
+                        <p>Implement at least 3 specialized agents working together with clear roles and responsibilities. Each agent should have specific expertise and contribute to the overall system functionality.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>💬 Interactive Interface</h4>
+                        <p>Build a Streamlit web application with real-time user interaction, chat-like interface, and dynamic content updates based on user input and agent responses.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>🔄 Multi-Stage Workflow</h4>
+                        <p>Create a multi-stage process where agents work sequentially or in parallel to process user requests, generate responses, and provide follow-up interactions.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>📊 Data Management</h4>
+                        <p>Implement proper data handling, session management, and state persistence to maintain context across user interactions.</p>
+                    </div>
+                    <div class="agent-card">
+                        <h4>🎨 User Experience</h4>
+                        <p>Design an intuitive interface with proper loading states, error handling, and responsive design that provides a smooth user experience.</p>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>📋 Project Ideas</h3>
+                    <ul class="input-list">
+                        <li><i class="fas fa-graduation-cap"></i> <strong>AI Tutor:</strong> Subject-specific learning assistant with adaptive questioning</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Business Analyst:</strong> Data analysis and insights generation tool</li>
+                        <li><i class="fas fa-pen-fancy"></i> <strong>Content Creator:</strong> Multi-format content generation and editing assistant</li>
+                        <li><i class="fas fa-code"></i> <strong>Code Reviewer:</strong> Programming assistance and code quality analysis</li>
+                        <li><i class="fas fa-heart"></i> <strong>Health Advisor:</strong> Wellness and fitness planning assistant</li>
+                        <li><i class="fas fa-shopping-cart"></i> <strong>E-commerce Assistant:</strong> Product recommendations and customer support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="resources-section">
+            <h2>📚 Implementation Resources</h2>
+            <ul>
+                <li><a href="https://docs.streamlit.io" target="_blank">Streamlit Documentation</a> - Building interactive web applications</li>
+                <li><a href="https://docs.crewai.com/how-to/advanced-orchestration" target="_blank">Advanced Orchestration</a> - Complex agent coordination patterns</li>
+                <li><a href="https://docs.crewai.com/how-to/custom-tools" target="_blank">Custom Tools Development</a> - Building specialized agent capabilities</li>
+                <li><a href="https://docs.streamlit.io/library/api-reference/chat" target="_blank">Streamlit Chat Elements</a> - Building chat interfaces</li>
+            </ul>
+        </section>
+
+        <section class="code-snippet">
+            <h2>💻 Implementation Guide</h2>
+            
+            <h3>🚀 Core Agent System Example</h3>
+            <pre><code class="language-python">from crewai import Agent, Task, Crew, Process
+from pydantic import BaseModel, Field
+import asyncio
+
+class ResponseData(BaseModel):
+    """Schema for agent responses."""
+    content: str = Field(..., description="The main response content")
+    confidence: float = Field(..., description="Confidence score (0-1)")
+    suggestions: list = Field(default=[], description="Follow-up suggestions")
+
+# Initialize agents
+main_agent = Agent(
+    role="Main Coordinator",
+    goal="Coordinate user interactions and manage workflow",
+    backstory="Expert in managing complex workflows and user interactions",
+    tools=[search_tool],
+    verbose=True,
+)
+
+specialist_agent = Agent(
+    role="Domain Specialist",
+    goal="Provide expert knowledge in the specific domain",
+    backstory="Deep expert in the chosen domain with years of experience",
+    verbose=True,
+)
+
+evaluator_agent = Agent(
+    role="Quality Evaluator",
+    goal="Evaluate and improve response quality",
+    backstory="Expert in quality assurance and response optimization",
+    verbose=True,
+)
+
+# Task creation functions
+def create_analysis_task(user_input: str) -> Task:
+    return Task(
+        description=f"Analyze the user request: {user_input}",
+        expected_output="Initial analysis and response plan",
+        agent=main_agent,
+    )
+
+def create_specialist_task(context: str) -> Task:
+    return Task(
+        description=f"Provide expert analysis for: {context}",
+        expected_output="Detailed expert response",
+        output_pydantic=ResponseData,
+        agent=specialist_agent,
+    )
+
+def create_evaluation_task(response: str) -> Task:
+    return Task(
+        description=f"Evaluate and improve this response: {response}",
+        expected_output="Improved response with quality assessment",
+        agent=evaluator_agent,
+    )
+
+# Main workflow function
+async def process_user_request(user_input: str):
+    # Create and execute the crew
+    crew = Crew(
+        agents=[main_agent, specialist_agent, evaluator_agent],
+        tasks=[
+            create_analysis_task(user_input),
+            create_specialist_task(user_input),
+            create_evaluation_task("placeholder"),
+        ],
+        process=Process.sequential,
+        verbose=True,
+    )
+    
+    result = await crew.kickoff_async()
+    return result</code></pre>
+
+            <h3>💬 Streamlit Chat Interface with Voice Input</h3>
+            <pre><code class="language-python">import streamlit as st
+import asyncio
+import whisper
+import tempfile
+import os
+from streamlit_mic_recorder import mic_recorder
+from your_agent_system import process_user_request
+
+st.title("🤖 AI Interactive System")
+
+# Initialize session state
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+    st.session_state.is_processing = False
+
+# Display chat messages
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
+# Input method selection
+input_method = st.radio("Choose input method:", ["Text", "Voice"], horizontal=True)
+
+user_input = None
+
+def convert_speech_to_text(audio_bytes):
+    """Convert speech to text using OpenAI Whisper."""
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
+            temp_audio.write(audio_bytes)
+            temp_audio_path = temp_audio.name
+
+        try:
+            # Load Whisper model
+            model = whisper.load_model("base")
+            result = model.transcribe(temp_audio_path)
+            return result["text"]
+        finally:
+            os.unlink(temp_audio_path)
+    except Exception as e:
+        st.error(f"Speech recognition error: {str(e)}")
+        return None
+
+# Get user input
+if input_method == "Text":
+    user_input = st.chat_input("Type your message...")
+else:
+    st.write("Click the microphone to record:")
+    audio = mic_recorder(
+        start_prompt="🎤 Start recording",
+        stop_prompt="⏹️ Stop recording",
+        just_once=True,
+        use_container_width=True,
+    )
+    
+    if audio:
+        with st.spinner("Converting speech to text..."):
+            user_input = convert_speech_to_text(audio["bytes"])
+            if user_input:
+                st.success(f"Recognized: {user_input}")
+            else:
+                st.error("Could not recognize speech. Please try again.")
+
+# Process user input
+if user_input and not st.session_state.is_processing:
+    st.session_state.messages.append({"role": "user", "content": user_input})
+    st.session_state.is_processing = True
+    
+    with st.chat_message("assistant"):
+        with st.spinner("🤖 Processing your request..."):
+            try:
+                response = asyncio.run(process_user_request(user_input))
+                st.session_state.messages.append(
+                    {"role": "assistant", "content": response}
+                )
+            except Exception as e:
+                st.error(f"Error: {str(e)}")
+            finally:
+                st.session_state.is_processing = False
+    
+    st.rerun()
+
+# Sidebar configuration
+with st.sidebar:
+    st.header("Configuration")
+    st.selectbox("Agent Mode", ["Standard", "Expert", "Fast"])
+    st.slider("Response Length", 1, 10, 5)
+    
+    if st.button("Clear Chat"):
+        st.session_state.messages = []
+        st.rerun()</code></pre>
+
+            <h3>📊 Session Management</h3>
+            <pre><code class="language-python">class SessionManager:
+    def __init__(self):
+        self.conversation_history = []
+        self.user_preferences = {}
+        self.context = {}
+    
+    def add_message(self, role: str, content: str):
+        self.conversation_history.append({
+            "role": role,
+            "content": content,
+            "timestamp": datetime.now()
+        })
+    
+    def get_context(self) -> str:
+        """Get conversation context for agents."""
+        recent_messages = self.conversation_history[-5:]  # Last 5 messages
+        return "\n".join([f"{msg['role']}: {msg['content']}" for msg in recent_messages])
+    
+    def update_preferences(self, key: str, value: any):
+        self.user_preferences[key] = value
+    
+    def clear_history(self):
+        self.conversation_history = []
+
+# Usage in Streamlit
+if "session_manager" not in st.session_state:
+    st.session_state.session_manager = SessionManager()</code></pre>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Alessandro Romano — Released under the MIT License</p>
+        </div>
+    </footer>
+</body>
+</html> 
