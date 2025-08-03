@@ -19,20 +19,20 @@ solutions/
 
 All solutions share the same requirements:
 - Python >=3.10 <3.13
-- CrewAI
+- CrewAI == 0.114.0
 - OpenAI API key
 - SerperDev API key
 
 ## Setup
 
-1. Install Poetry if you haven't already:
+1. Install uv if you haven't already:
    ```bash
-   curl -sSL https://install.python-poetry.org | python3 -
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
 2. Install dependencies:
    ```bash
-   poetry install
+   uv sync
    ```
 
 3. Set up your API keys:
@@ -50,8 +50,8 @@ All solutions share the same requirements:
 
 To run a specific solution:
 ```bash
-poetry run python assignment-1.py  # For the first assignment
-poetry run python assignment-2.py  # For the second assignment
+uv run python assignment-1.py  # For the first assignment
+uv run python assignment-2.py  # For the second assignment
 # and so on...
 ```
 

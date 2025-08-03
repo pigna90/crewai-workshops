@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrewAI Workshop - PyCon DE 2025</title>
+    <title>CrewAI Workshop - Data Hack Summit 2025</title>
     <link rel="icon" type="image/png" href="public/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -38,7 +38,7 @@
         <div class="hero-content">
             <h1>Agentic AI</h1>
             <h2>Build a Multi-Agent Application with CrewAI</h2>
-            <p class="hero-description">Welcome to the <i>Agentic AI: Build a Multi-Agent Application with CrewAI</i> workshop website for PyCon DE & PyData 2025. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/agentic_ai_workshop_slides_alessandro_romano.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
+            <p class="hero-description">Welcome to the <i>Agentic AI: Build a Multi-Agent Application with CrewAI</i> workshop website for <a href="https://www.analyticsvidhya.com/datahacksummit/" target="_blank">Data Hack Summit 2025</a>. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/agentic_ai_workshop_slides_alessandro_romano.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
             <div class="social-links">
                 <a href="https://github.com/pigna90/crewai-workshop-pyconde-2025" target="_blank"><i class="fab fa-github"></i></a>
             </div>
@@ -103,9 +103,9 @@
                             <div class="setup-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
-                                    <h3>Install Poetry (if not already installed)</h3>
+                                    <h3>Install uv (if not already installed)</h3>
                                     <div class="code-block">
-                                        <code>curl -sSL https://install.python-poetry.org | python3 -</code>
+                                        <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code>
                                     </div>
                                 </div>
                             </div>
@@ -116,30 +116,27 @@
                                     <div class="code-block">
                                         <code>mkdir workshop-solutions</code>
                                         <code>cd workshop-solutions</code>
-                                        <code>poetry init --no-interaction</code>
+                                        <code>uv init</code>
                                     </div>
                                 </div>
                             </div>
                             <div class="setup-step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <h3>Download Configuration</h3>
-                                    <div class="step-description">
-                                        <p class="step-text">Download the configuration file and rename it to <code>pyproject.toml</code>:</p>
-                                        <div class="download-section">
-                                            <a href="./solutions/pyproject.toml.download" download class="download-btn">
-                                                <i class="fas fa-download"></i> Download pyproject.toml
-                                            </a>
-                                        </div>
+                                    <h3>Add Dependencies</h3>
+                                    <div class="code-block">
+                                        <code>uv add crewai==0.114.0</code>
+                                        <code>uv add python-dotenv</code>
+                                        <code>uv add streamlit</code>
                                     </div>
                                 </div>
                             </div>
                             <div class="setup-step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
-                                    <h3>Install Dependencies</h3>
+                                    <h3>Activate Virtual Environment</h3>
                                     <div class="code-block">
-                                        <code>poetry install</code>
+                                        <code>source .venv/bin/activate</code>
                                     </div>
                                 </div>
                             </div>
