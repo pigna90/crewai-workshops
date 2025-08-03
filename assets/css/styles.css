@@ -38,8 +38,14 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #6366f1;
+    color: #1e3a8a;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #1e40af;
+    transform: translateY(-1px);
 }
 
 .nav-links {
