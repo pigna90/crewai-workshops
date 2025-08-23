@@ -87,6 +87,13 @@ def main():
         prompt="Write a story about a robot", target_model="gpt-4"
     ).kickoff()
 
+    print(result)              # shows the overall structured output
+    print(result.tasks_output) # lets you see task-by-task outputs
+
+    #output1 = task.execute()
+    #print(output1)   # inspect before moving on
+    #output2 = task2.execute(inputs=output1)
+
     print("\nFinal Optimized Prompt:")
     print(result)
 
