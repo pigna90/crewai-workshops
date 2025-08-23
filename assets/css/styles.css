@@ -154,9 +154,38 @@ nav {
     background: none !important;
 }
 
+/* News Badge */
+.news-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #fef3c7, #fde68a, #fbbf24);
+    border: 2px solid #f59e0b;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: #92400e;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    text-decoration: none;
+}
+
+.news-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+.news-badge i {
+    color: #d97706;
+    font-size: 1rem;
+}
+
 /* Prerequisites Section - New Design */
 .prerequisites {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem 4rem 2rem;
     background-color: #fff;
 }
 
