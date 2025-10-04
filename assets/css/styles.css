@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #1a1a2e;
+    color: #000000;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -38,13 +38,13 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1e3a8a;
+    color: #0693e3;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .logo:hover {
-    color: #1e40af;
+    color: #9b51e0;
     transform: translateY(-1px);
 }
 
@@ -56,18 +56,18 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #1e293b;
+    color: #000000;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #6366f1;
+    color: #0693e3;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #0693e3 0%, #9b51e0 100%);
     color: white;
     padding: 4rem 5%;
     text-align: center;
@@ -192,7 +192,7 @@ nav {
 .prerequisites h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #1e293b;
+    color: #000000;
     font-size: 2.5rem;
 }
 
@@ -222,14 +222,14 @@ nav {
     background: none;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #000000;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .tab-btn.active {
-    color: #6366f1;
+    color: #0693e3;
 }
 
 .tab-btn.active::after {
@@ -239,12 +239,12 @@ nav {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #6366f1;
+    background: #0693e3;
 }
 
 .tab-btn:hover {
-    color: #6366f1;
-    background: rgba(99, 102, 241, 0.1);
+    color: #0693e3;
+    background: rgba(6, 147, 227, 0.1);
 }
 
 .tabs-content {
@@ -289,12 +289,12 @@ nav {
 
 .api-key-icon {
     font-size: 2.5rem;
-    color: #6366f1;
+    color: #0693e3;
     margin-bottom: 1rem;
 }
 
 .api-key-card h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
@@ -309,17 +309,17 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #6366f1;
+    color: #0693e3;
     text-decoration: none;
     font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(6, 147, 227, 0.1);
     transition: all 0.3s ease;
 }
 
 .api-key-link:hover {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(6, 147, 227, 0.2);
     transform: translateX(5px);
 }
 
@@ -348,7 +348,7 @@ nav {
 .step-number {
     width: 40px;
     height: 40px;
-    background: #6366f1;
+    background: #0693e3;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -364,13 +364,13 @@ nav {
 }
 
 .step-content h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
 .code-block {
-    background: #1e293b;
+    background: #000000;
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -418,7 +418,7 @@ nav {
 .assignments h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #1e293b;
+    color: #000000;
     font-size: 2rem;
     position: relative;
     padding-bottom: 0.5rem;
@@ -432,7 +432,7 @@ nav {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    background: linear-gradient(to right, #0693e3, #9b51e0);
     border-radius: 2px;
 }
 
@@ -448,7 +448,7 @@ nav {
 /* Final project card spans full width */
 .assignment-card.final-project {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #0693e3, #9b51e0, #ff6900);
     color: white;
     border: none;
     position: relative;
@@ -544,7 +544,7 @@ nav {
     transform: translateX(-50%);
     width: 30px;
     height: 30px;
-    background: #6366f1;
+    background: #0693e3;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -568,13 +568,13 @@ nav {
 
 .assignment-icon {
     font-size: 2.5rem;
-    color: #6366f1;
+    color: #0693e3;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
 
 .assignment-card h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1rem;
     min-height: 3em;
     display: flex;
@@ -595,24 +595,24 @@ nav {
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #0693e3, #9b51e0);
     color: white;
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 2px 8px rgba(6, 147, 227, 0.3);
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    background: linear-gradient(135deg, #00d084, #0693e3);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 12px rgba(6, 147, 227, 0.4);
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #1e293b, #334155);
+    background: linear-gradient(135deg, #000000, #334155);
     color: white;
     padding: 1rem 0;
     margin-top: auto;
@@ -645,7 +645,7 @@ footer {
 
 .footer .social-links a:hover {
     transform: scale(1.2);
-    color: #ec4899;
+    color: #ff6900;
 }
 
 /* Responsive Design */
@@ -759,7 +759,7 @@ footer {
 
 .project-info h1 {
     font-size: 2.5rem;
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
@@ -770,14 +770,14 @@ footer {
     position: absolute;
     width: 50%;
     height: 3px;
-    background: #6366f1;
+    background: #0693e3;
     bottom: -10px;
     left: 25%;
 }
 
 .project-info h2 {
     font-size: 2rem;
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
@@ -789,7 +789,7 @@ footer {
     position: absolute;
     width: 50%;
     height: 3px;
-    background: #6366f1;
+    background: #0693e3;
     bottom: -10px;
     left: 25%;
 }
@@ -802,13 +802,13 @@ footer {
 }
 
 .project-info p a {
-    color: #6366f1;
+    color: #0693e3;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .project-info p a:hover {
-    color: #5b21b6;
+    color: #00d084;
 }
 
 .conference-link {
@@ -819,14 +819,14 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #6366f1;
+    color: #0693e3;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .conference-link a:hover {
-    color: #5b21b6;
+    color: #00d084;
 }
 
 .social-links {
@@ -844,14 +844,14 @@ footer {
     height: 45px;
     background: #f8fafc;
     border-radius: 50%;
-    color: #6366f1;
+    color: #0693e3;
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
     transform: translateY(-3px);
-    color: #6366f1;
+    color: #0693e3;
 }
 
 .rating-section {
@@ -863,7 +863,7 @@ footer {
 }
 
 .rating-section h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -879,7 +879,7 @@ footer {
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #0693e3, #9b51e0);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -888,7 +888,7 @@ footer {
 }
 
 .feedback-button:hover {
-    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    background: linear-gradient(135deg, #00d084, #9b51e0);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
 }
@@ -921,7 +921,7 @@ main {
 
 main h1 {
     font-size: 2.5rem;
-    color: #1e293b;
+    color: #000000;
     text-align: center;
     margin: 2rem 0;
     padding-bottom: 1rem;
@@ -940,7 +940,7 @@ main h1 {
 .task-explanation h2,
 .resources h2,
 .code-snippet h2 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -955,13 +955,13 @@ main h1 {
 }
 
 .resources a {
-    color: #6366f1;
+    color: #0693e3;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .resources a:hover {
-    color: #5b21b6;
+    color: #00d084;
     text-decoration: underline;
 }
 
@@ -1017,7 +1017,7 @@ code[class*="language-"] {
 }
 
 .agent-card h4 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -1041,7 +1041,7 @@ code[class*="language-"] {
 
 .input-list i {
     margin-right: 10px;
-    color: #6366f1;
+    color: #0693e3;
 }
 
 .context-section {
@@ -1052,7 +1052,7 @@ code[class*="language-"] {
 }
 
 .context-section h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -1093,12 +1093,12 @@ code[class*="language-"] {
 
 .step-icon {
     font-size: 1.2em;
-    color: #6366f1;
+    color: #0693e3;
     margin-bottom: 3px;
 }
 
 .step-content h4 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 2px;
     font-size: 0.85em;
 }
@@ -1110,7 +1110,7 @@ code[class*="language-"] {
 }
 
 .flow-arrow {
-    color: #6366f1;
+    color: #0693e3;
     font-size: 1em;
     padding: 0 2px;
 }
@@ -1138,7 +1138,7 @@ code[class*="language-"] {
 }
 
 .resources-section h3 {
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -1156,13 +1156,13 @@ code[class*="language-"] {
 }
 
 .resources-section a {
-    color: #6366f1;
+    color: #0693e3;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .resources-section a:hover {
-    color: #5b21b6;
+    color: #00d084;
     text-decoration: underline;
 }
 
@@ -1171,7 +1171,7 @@ code[class*="language-"] {
 .assignments h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #1e293b;
+    color: #000000;
     font-size: 2.5rem;
     position: relative;
     padding-bottom: 0.5rem;
@@ -1186,7 +1186,7 @@ code[class*="language-"] {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    background: linear-gradient(to right, #0693e3, #9b51e0);
     border-radius: 2px;
 }
 
@@ -1256,7 +1256,7 @@ code[class*="language-"] {
 }
 
 .cookie-btn.accept {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #0693e3, #9b51e0);
     color: white;
     box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
@@ -1268,7 +1268,7 @@ code[class*="language-"] {
 }
 
 .cookie-btn.accept:hover {
-    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    background: linear-gradient(135deg, #00d084, #9b51e0);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
@@ -1313,7 +1313,7 @@ code[class*="language-"] {
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 1.1rem;
-    color: #6366f1;
+    color: #0693e3;
     font-weight: 500;
     font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
     border: 1px solid rgba(99, 102, 241, 0.1);
@@ -1336,7 +1336,7 @@ code[class*="language-"] {
     align-items: center;
     gap: 0.6rem;
     padding: 0.7rem 1.5rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #0693e3, #9b51e0);
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -1348,7 +1348,7 @@ code[class*="language-"] {
 }
 
 .download-btn:hover {
-    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    background: linear-gradient(135deg, #00d084, #9b51e0);
     transform: translateY(-1px);
     box-shadow: 0 3px 6px rgba(99, 102, 241, 0.3);
 }

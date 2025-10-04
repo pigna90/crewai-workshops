@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrewAI Workshop - Data Hack Summit 2025</title>
+    <title>CrewAI Workshop - Porto Tech Hub 2025</title>
     <link rel="icon" type="image/png" href="public/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -38,11 +38,11 @@
         <div class="hero-content">
             <h1>Agentic AI</h1>
             <h2>Build a Multi-Agent Application with CrewAI</h2>
-            <p class="hero-description">Welcome to the <i>Agentic AI: Build a Multi-Agent Application with CrewAI</i> workshop website for <a href="https://www.analyticsvidhya.com/datahacksummit/" target="_blank">Data Hack Summit 2025</a>. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/agentic_ai_workshop_slides_alessandro_romano.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
+            <p class="hero-description">Welcome to the <i>Agentic AI: Build a Multi-Agent Application with CrewAI</i> workshop website for <a href="https://portotechhub.com/conference-2025/" target="_blank">Porto Tech Hub 2025</a>. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/agentic-ai-alessandro-romano-workshop-crewai.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
             <div class="social-links">
-                <div class="news-badge" onclick="window.open('https://github.com/pigna90/crewai-workshop-pyconde-2025', '_blank')">
+                <div class="news-badge disabled">
                     <i class="fas fa-lightbulb"></i>
-                    <span>Check solutions in repo!</span>
+                    <span>Solutions coming after the workshop</span>
                 </div>
             </div>
         </div>
@@ -102,6 +102,15 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="setup">
+                        <div class="setup-note">
+                            <div class="setup-note-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="setup-note-content">
+                                <strong>Development Environment Options</strong>
+                                <p>While I recommend using <strong>uv</strong> for the best experience, you're free to use any Python environment you prefer, such as <strong>Jupyter Notebook</strong>, <strong>Google Colab</strong>, or your existing setup.</p>
+                            </div>
+                        </div>
                         <div class="setup-steps">
                             <div class="setup-step">
                                 <div class="step-number">1</div>
@@ -291,6 +300,63 @@
         .providers-list strong {
             color: #1e293b;
             font-weight: 600;
+        }
+
+        .news-badge.disabled {
+            background: linear-gradient(135deg, #32373c, #32373c) !important;
+            cursor: not-allowed !important;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .news-badge.disabled:hover {
+            transform: none !important;
+            box-shadow: 0 2px 4px rgba(50, 55, 60, 0.2) !important;
+        }
+
+        .setup-note {
+            background: linear-gradient(135deg, rgba(6,147,227,0.1) 0%, rgba(155,81,224,0.1) 100%);
+            border: 1px solid #0693e3;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(6,147,227,0.15);
+        }
+
+        .setup-note-icon {
+            color: #0693e3;
+            font-size: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .setup-note-content {
+            flex: 1;
+        }
+
+        .setup-note-content strong {
+            display: block;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .setup-note-content p {
+            margin: 0;
+            color: #000000;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .setup-note-content p strong {
+            display: inline;
+            color: #9b51e0;
+            font-weight: 600;
+            margin-bottom: 0;
         }
     </style>
 </body>
