@@ -91,7 +91,8 @@ class ContentCreationFlow(Flow[ContentState]):
         elif self.state.generation_attempts_left == 0:
             return "rejected"
         else:
-            return "regenerate"
+            self.state.generation_attempts_left -= 1
+            return "retry"
 
     @listen("approved")
     def finalize_content(self):
@@ -99,13 +100,6 @@ class ContentCreationFlow(Flow[ContentState]):
         with open("approved_content.txt", "w") as file:
             file.write(self.state.content)
         print("Content saved to approved_content.txt")
-
-    @listen("regenerate")
-    def regenerate_content(self):
-        """Regenerate content if previous attempt was unsafe."""
-        self.state.generation_attempts_left -= 1
-        self.generate_content()
-        return "retry"
 
     @listen("rejected")
     def notify_rejection(self):
