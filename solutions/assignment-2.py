@@ -30,7 +30,7 @@ class ContentCreationFlow(Flow[ContentState]):
         self.topic = topic
         self.target_platform = target_platform
 
-    @start()
+    @start("retry")
     def generate_content(self):
         """Generate initial content based on the topic."""
         content_creator = Agent(
@@ -105,6 +105,7 @@ class ContentCreationFlow(Flow[ContentState]):
         """Regenerate content if previous attempt was unsafe."""
         self.state.generation_attempts_left -= 1
         self.generate_content()
+        return "retry"
 
     @listen("rejected")
     def notify_rejection(self):
