@@ -152,6 +152,35 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="setup-step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h3>Set Environment Variables</h3>
+                                    <p>Add your API keys as environment variables. Choose one of the following options:</p>
+
+                                    <h4 style="color: #0693e3; margin: 1.5rem 0 0.8rem 0; font-size: 1.1rem;">Option 1: Create a .env file</h4>
+                                    <div class="code-block">
+                                        <code>echo "OPENAI_API_KEY=your_openai_api_key_here" > .env</code>
+                                        <code>echo "SERPER_API_KEY=your_serper_api_key_here" >> .env</code>
+                                    </div>
+
+                                    <h4 style="color: #0693e3; margin: 1.5rem 0 0.8rem 0; font-size: 1.1rem;">Option 2: Set directly in terminal (macOS/Linux)</h4>
+                                    <div class="code-block">
+                                        <code>export OPENAI_API_KEY='your_openai_api_key_here'</code>
+                                        <code>export SERPER_API_KEY='your_serper_api_key_here'</code>
+                                    </div>
+
+                                    <div class="setup-note" style="margin-top: 1.5rem;">
+                                        <div class="setup-note-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <div class="setup-note-content">
+                                            <strong>Using Different LLM Providers?</strong>
+                                            <p>If you're using an alternative AI model provider instead of OpenAI, please refer to the <a href="https://docs.crewai.com/en/learn/llm-connections" target="_blank">CrewAI LLM Connections documentation</a> for specific setup instructions for your chosen provider.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
