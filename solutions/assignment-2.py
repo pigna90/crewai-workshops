@@ -31,6 +31,7 @@ class ContentCreationFlow(Flow[ContentState]):
         self.target_platform = target_platform
 
     @start()
+    @listen("regenerate")
     def generate_content(self):
         """Generate initial content based on the topic."""
         content_creator = Agent(
@@ -91,6 +92,7 @@ class ContentCreationFlow(Flow[ContentState]):
         elif self.state.generation_attempts_left == 0:
             return "rejected"
         else:
+            self.state.generation_attempts_left -= 1
             return "regenerate"
 
     @listen("approved")
@@ -99,12 +101,6 @@ class ContentCreationFlow(Flow[ContentState]):
         with open("approved_content.txt", "w") as file:
             file.write(self.state.content)
         print("Content saved to approved_content.txt")
-
-    @listen("regenerate")
-    def regenerate_content(self):
-        """Regenerate content if previous attempt was unsafe."""
-        self.state.generation_attempts_left -= 1
-        self.generate_content()
 
     @listen("rejected")
     def notify_rejection(self):
