@@ -133,6 +133,7 @@ class TravelAdvisorFlow(Flow[TravelState]):
         self.destination = destination
 
     @start()
+    @listen("regenerate")
     def generate_vacation_plan(self):
         print("Generating vacation plan")
         task = create_vacation_plan_task(self.names, self.city, self.destination)
@@ -157,6 +158,7 @@ class TravelAdvisorFlow(Flow[TravelState]):
         elif self.state.generation_attempts_left == 0:
             return "not_feasible"
         else:
+            self.state.generation_attempts_left -= 1
             return "regenerate"
 
     @listen("valid")
@@ -164,11 +166,6 @@ class TravelAdvisorFlow(Flow[TravelState]):
         with open("vacation_plan.txt", "w") as file:
             file.write(self.state.vacation_plan)
         print("Vacation plan saved in file")
-
-    @listen("regenerate")
-    def regenerate_vacation_plan(self):
-        self.state.generation_attempts_left -= 1
-        self.generate_vacation_plan()
 
     @listen("not_feasible")
     def notify_user(self):
