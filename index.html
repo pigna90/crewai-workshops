@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrewAI Workshop - Porto Tech Hub 2025</title>
+    <title>Agentic AI Workshop - CrewAI Multi-Agent Applications</title>
     <link rel="icon" type="image/png" href="public/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -38,11 +38,15 @@
         <div class="hero-content">
             <h1>Agentic AI</h1>
             <h2>Build a Multi-Agent Application with CrewAI</h2>
-            <p class="hero-description">Welcome to the <i>Agentic AI: Build a Multi-Agent Application with CrewAI</i> workshop website made for <a href="https://theneuralmaze.substack.com/" target="_blank"><strong>Neural Maze</strong></a>. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/CrewAI Workshop Neural Maze.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
-            <div class="social-links">
-                <a href="https://github.com/pigna90/crewai-workshops" target="_blank" class="news-badge">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Solutions available now</span>
+            <p class="hero-description">Developed by <a href="https://www.aromano.dev/" target="_blank"><strong>Alessandro Romano</strong></a>, this workshop represents the culmination of hands-on training sessions delivered at <strong>PyCon DE</strong>, <strong>Data Hack Summit</strong>, and <a href="https://theneuralmaze.substack.com/" target="_blank"><strong>The Neural Maze</strong></a>. This platform provides a comprehensive resource for the workshop, featuring detailed explanations of all assignments and their prerequisites. The workshop content is based on <a href="./public/crew_ai_workshop_alessandro_romano_slides.pdf" target="_blank">this presentation</a>, which provides the theoretical foundation for the practical exercises you'll find here.</p>
+            <div class="social-links" style="display: none;">
+                <a href="https://github.com/pigna90/crewai-workshops"
+                   target="_blank"
+                   style="display: inline-flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); color: #1a1a1a; text-decoration: none; padding: 20px 32px; border-radius: 35px; font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.4s ease; box-shadow: 0 10px 40px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3); border: 3px solid #fcd34d; position: relative; overflow: hidden;"
+                   onmouseover="this.style.transform='translateY(-5px) scale(1.08)'; this.style.boxShadow='0 15px 50px rgba(251, 191, 36, 0.8), 0 0 50px rgba(251, 191, 36, 0.5)'; this.style.background='linear-gradient(135deg, #fcd34d 0%, #fbbf24 50%, #f59e0b 100%)'; this.style.borderColor='#fed7aa'"
+                   onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 40px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)'; this.style.background='linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)'; this.style.borderColor='#fcd34d'">
+                    <i class="fas fa-lightbulb" style="font-size: 20px; animation: goldPulse 1.5s infinite; color: #92400e;"></i>
+                    <span style="text-shadow: 0 1px 2px rgba(0,0,0,0.1);">Solutions Available Now</span>
                 </a>
             </div>
         </div>
@@ -375,6 +379,24 @@
             color: #9b51e0;
             font-weight: 600;
             margin-bottom: 0;
+        }
+
+        @keyframes goldPulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(146, 64, 14, 0.5);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+                text-shadow: 0 0 15px rgba(146, 64, 14, 0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(146, 64, 14, 0.5);
+            }
         }
     </style>
 </body>
