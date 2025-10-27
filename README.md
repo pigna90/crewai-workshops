@@ -6,9 +6,9 @@
 
 This repository is a collection of CrewAI workshops, where the latest workshop is in the main branch (and published via GitHub Pages), while older workshops are maintained as separate branches.
 
-## Current Workshop: Porto Tech Hub 2025
+## Workshop: Agentic AI with CrewAI
 
-The main branch contains the materials and assignments for the **Agentic AI: Build a Multi-Agent Application with CrewAI** workshop at [Porto Tech Hub 2025](https://portotechhub.com/conference-2025/). The workshop website serves as a central hub to guide participants through the hands-on learning session.
+The main branch contains the materials and assignments for the **Agentic AI: Build a Multi-Agent Application with CrewAI** workshop. This comprehensive workshop teaches participants how to build multi-agent applications using the CrewAI framework. The workshop website serves as a central hub to guide participants through the hands-on learning session.
 
 ## Overview
 
@@ -29,6 +29,7 @@ A hands-on Python workshop featuring:
 
 Older workshop versions are maintained as separate branches in this repository, allowing participants to access historical materials and track the evolution of the workshop content. To access the webpage for any workshop, simply clone the repository and open the `index.html` file in your browser.
 
+- **Porto Tech Hub 2025**: `porto-tech-hub-2025` branch - Agentic AI workshop materials for Porto Tech Hub 2025
 - **Data Hack Summit 2025**: `data-hack-summit-2025` branch - Agentic AI workshop materials for Data Hack Summit 2025
 - **PyCon DE 2025**: `pycon-de-2025` branch - Agentic AI workshop for PyCon DE & PyData 2025
 
