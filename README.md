@@ -1,7 +1,9 @@
 # CrewAI Workshops Collection
 
 <div align="center">
-  <img src="public/favicon.png" alt="CrewAI Logo" width="200"/>
+  <img src="public/neural_maze_schema.png" alt="CrewAI Neural Maze Schema" width="400"/>
+  <br>
+  <em>Image created by Miguel Otero Pedrido from <a href="https://theneuralmaze.substack.com/">The Neural Maze</a></em>
 </div>
 
 This repository is a collection of CrewAI workshops, where the latest workshop is in the main branch (and published via GitHub Pages), while older workshops are maintained as separate branches.
