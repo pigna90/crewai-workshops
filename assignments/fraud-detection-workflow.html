@@ -151,20 +151,29 @@
 ]</code></pre>
 
             <h3>Conditional Task</h3>
-            <pre><code class="language-python">def is_escalation_needed(output: TaskOutput) -> bool:
-    return len(output.pydantic.defects) > 5
+            <pre><code class="language-python"># Condition to check if issues exceed a threshold
+def is_escalation_needed(output: TaskOutput) -> bool:
+    return len(output.pydantic.issues) > 5
 
-class QualityCheckTaskOutput(BaseModel):
-    defects: List[str]
+class CodeReviewTaskOutput(BaseModel):
+    issues: List[str]
 
-def create_quality_check_tasks(product_batches: List[str]):
+def create_code_review_tasks(code_files: List[str]):
     task1 = Task(
-        description=f"Inspect the following product batches and list any defects: {product_batches}",
-        agent=quality_inspector,
-        expected_output=f"List of detected defects for each product batch.",
-        output_pydantic=QualityCheckTaskOutput,
+        description=f"Review the following code files for issues: {code_files}",
+        agent=code_reviewer,
+        expected_output=f"List of code issues found in each file.",
+        output_pydantic=CodeReviewTaskOutput,
     )
-    return [task1]</code></pre>
+    return [task1]
+
+# Define conditional task
+conditional_task = ConditionalTask(
+    description="Escalate code review if more than 5 issues are detected.",
+    agent=senior_developer,
+    condition=is_escalation_needed,
+    expected_output="Senior review with recommendations for critical issues.",
+)</code></pre>
         </section>
     </main>
 
